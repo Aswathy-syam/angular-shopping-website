@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<div style="margin-top: 80px">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <a routerLink="" class="btn btn-primary">Back to Home</a>
+
+    <div class="row shadow p-5 mt-4">
+        <!-- img -->
+      <div class="col-lg-6">
+        <img class="img-fluid" src="https://banner2.cleanpng.com/20180426/lwq/kisspng-computer-icons-login-management-user-5ae155f3386149.6695613615247170432309.jpg"  alt="no img">
+      </div>
+
+      <!-- home -->
+      <div class="col-lg-6 bg-primary">
+
+<div style="height: 100%;" class="d-flex flex-column align-items-center">
+<h3 class="fw-bolder">Welcome User</h3>
+
+<form [formGroup]="loginForm" class="mt-5" (ngSubmit)="login()" >
+<!-- emailid -->
+<div class="mb-4">
+    <input type="text" placeholder="email id please!!!" class="form-control" formControlName="email">
+</div>
+
+<!-- eorror div -->
+<div *ngIf="this.loginForm.get('email')?.errors && this.loginForm.get('email')?.touched" class="fw-bolder text-danger mb-3">Invalid email</div>
+
+<!-- password -->
+<div class="mb-3">
+<input type="password" placeholder="enter your password" class="form-control" formControlName="password">
+
+</div>
+
+<!-- eorror div -->
+<div *ngIf="this.loginForm.get('password')?.errors && this.loginForm.get('password')?.touched" class="fw-bolder text-danger mb-3">Invalid password</div>
+
+<input type="submit" class="btn btn-light mt-3 mb-4" value="Login">
+
+</form>
+
+<p>New User?Click Here <a class="text-light" routerLink="/user/register">Register</a></p>
+</div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
